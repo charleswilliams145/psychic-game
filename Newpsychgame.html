@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styless.css">
+    <script src="newGame.js"></script>
+</head>
+<body>
+    <h1>The Psychic Game</h1>
+    <h3>GUESS WHAT I AM THINKING ???? ???? ????</h3>
+    <div id="instructions">Press a key and see if you can think like me, you may get it write; you may get it wrong; but you only get five guesses and you are gone!!!
+    </div>
+    <div id="wrapper">
+        <div id=>Wins: <span id = "wins">0</span> </div>
+        <div >Losses: <span id = "losses">0</span></div>
+        <div >Guesses Left: <span id="guessesLeft">5</span></div>
+        <div>Your Guesses So Far: <span id = "YourGuessesSoFar"></span></div>
+        </div>
+    <img src="https://s.hswstatic.com/gif/brain-1.jpg">
+    <div class="brain"><img src="https://s.hswstatic.com/gif/brain-1.jpg"></div>
+    <script>
+        let computerOption = ["a","b","c","d","e","E","f","F","g","G","h","H","i","I","j","J","k","K","l","L","m","M","n","N","o","O","p","P","q","Q","r","R","s","S","t","T","u","U","v","V","w","W","x","y","Y","z","Z",];
+        let wins=0;
+        let losses=0;
+        let guessesLeft=5;
+        let yourGuessesSoFar=[];
+        let computerChoice = computerOption[Math.floor(Math.random()*computerOption.length)];
+        const winsText=document.getElementById("wins");
+        const lossesTest=document.getElementById("losses");
+        const guessesLeftText=document.getElementById("guessesLeft");
+        const yourGuessesSoFarText=document.getElementById("YourGuessesSoFar");
+
+         document.onkeyup = function(){
+        let userSelection = String.fromCharCode(event.keyCode).toLowerCase();
+        console.log(userSelection);
+
+
+        if(userSelection === computerChoice){
+            wins++;
+            winsText.innerHTML=wins
+            guessesLeft=5;
+            guessesLeftText.innerHTML=guessesLeft;
+            yourGuessesSoFar=[];
+        }
+        else{
+            guessesLeft--;
+            guessesLeftText.innerHTML=guessesLeft;
+            
+            yourGuessesSoFar.push(userSelection);
+            yourGuessesSoFarText.innerHTML=yourGuessesSoFar;
+            
+
+        }
+
+            
+        if (guessesLeft===0){
+            losses++
+            lossesTest.innerHTML=losses;
+            guessesLeft=5;
+            guessesLeftText.innerHTML=guessesLeft;
+            yourGuessesSoFar=[];
+
+        }
+
+    if ("userSelection =event.keyCode"){
+        return userSelection;
+        yourGuessesSoFar=userSelection;   
+            
+        }
+        
+
+
+
+
+
+        var instructions ="<div>Press a key and see if you can think like me, you may get it write; you may get it wrong; but you only get five guesses and you are gone!!!</div>"+
+        "<div>wins: "+ wins +"</div>"+
+        "<div>losses: "+losses + "</div>" +
+        "<div>guessesLeft: "+guessesLeft +"</div>"+
+        "<div>yourGuessesSoFar: "+yourGuessesSoFar + "</div>";
+
+        document.querySelector
+
+        document.write(instructions);
+
+    }
+    
+
+
+
+
+    
+    
+    </script>
+    
+        
+        
+    
+</body>re
+</html>
